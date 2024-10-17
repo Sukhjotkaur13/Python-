@@ -1,0 +1,61 @@
+mentor = {  }
+
+def add ( name, course):
+    mentor[name] = course
+    print(f"{name} mentor of {course} successfully added")
+
+def update(name , course):
+    if name in mentor:
+        mentor[name] = course
+        print(f"{course} to5 {name} successfully updated")
+    else:
+        print(f"Sorry! {name} not found in the record")
+
+def delete ( name ):
+    if name in mentor:
+        del mentor[name]
+        print(f"{name} mentor  successfully deleted")
+    else:
+        print(f"Sorry! {name} not found in the record.")
+
+def display ():
+    print("______________")
+    print("Name    |     Course")
+    for name ,  course in mentor.items():
+        print(f"\n{name}    |     {course}\n")
+
+def main():
+    while(True):
+        print("\nStudent grade management System")
+        print("1. Add student")
+        print("2. Update grade")
+        print("3. Delete student")
+        print("4. View student")
+        print("5. Exit")
+    
+        choice = int(input("Enter the task you want to perform"))
+                     
+        if choice == 1:
+            name = input("Enter the name of the mentor")
+            course =  input("Enter the name of the course")
+            add(name ,  course)
+        elif choice == 2:
+            name = input("Enter the name of the mentor")
+            course = input("Enter the name of the course: ")
+            update(name ,  course)
+        elif choice == 3:
+            name =  input("Enter the name of the mentor you want  to delete")
+            delete(name)
+        elif choice == 4:
+            display()
+        elif choice == 5: 
+            print("Thankyou! The record is closing now.")
+            break
+        else:
+            print("Invalid Choice")
+            
+                
+
+            
+
+main()
